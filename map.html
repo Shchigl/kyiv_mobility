@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Change a map's style</title>
+<title>Моніторинг міської мобільності. А+С Україна</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
@@ -12,26 +12,69 @@
 </style>
 </head>
 <body>
+
 <style>
-.legend {
+#mapboxgl-popup {
+max-width: 400px;
+font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+</style>
+
+<div id="logo">
+
+<img src="C:\Users\shchigl\Desktop\a+c_logo_main.svg" alt="А+С Україна" width="120.4" height="44.8">
+
+</div>
+
+<style>
+#logo {
+    position: absolute;
+    z-index: 100;
+    top: 15px;
+    left: 15px;
+}
+</style>
+
+<div id="legend" class="legend">
+<h4>Інтенсивності руху індивідуального транспорту, одиниць/добу</h4>
+<div><span style="background-color: #202431"></span>більше 40 000</div>
+<div><span style="background-color: #22303E"></span>20 001 - 40 000</div>
+<div><span style="background-color: #213D4A"></span>10 001 - 20 000</div>
+<div><span style="background-color: #1F4A55"></span>5 001 - 10 000</div>
+<div><span style="background-color: #1D585D"></span>2 001 - 5 000</div>
+<div><span style="background-color: #1C6664"></span>1 001 - 2 000</div>
+<div><span style="background-color: #227468"></span>501 - 1 000</div>
+<div><span style="background-color: #2E8269"></span>101 - 500</div>
+<div><span style="background-color: #409069"></span>менше 100</div>
+<h5>Джерело даних: Модель міської мобільності</h5>
+</div>
+
+<style>
+#legend {
 background-color: #fff;
 border-radius: 5px;
 bottom: 30px;
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-font: 18px/23px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+font: 15px/20px Helvetica;
 padding: 20px;
 position: absolute;
 opacity: 0.9;
 right: 15px;
 z-index: 1;
-width: 20%;
+width: 270px;
 }
  
-.legend h4 {
+#legend h4 {
 margin: 0 0 10px;
+font: bold 18px/23px Helvetica;
+}
+
+#legend h5 {
+margin: 10px 0 0;
+font: bold 12px/12px Helvetica;
 }
  
-.legend div span {
+#legend div span {
 border-radius: 0%;
 display: inline-block;
 height: 12px;
@@ -40,21 +83,9 @@ width: 50px;
 }
 </style>
  
+
 <div id="map"></div>
- 
-<div id="legend" class="legend">
-<h4>Інтенсивності руху індивідуального транспорту, одиниць/добу</h4>
-<div><span style="background-color: #681100"></span>більше 40 000</div>
-<div><span style="background-color: #b11200"></span>20 001 - 40 000</div>
-<div><span style="background-color: #df0000"></span>10 001 - 20 000</div>
-<div><span style="background-color: #f25800"></span>5 001 - 10 000</div>
-<div><span style="background-color: #f0b500"></span>2 001 - 5 000</div>
-<div><span style="background-color: #e6fe00"></span>1 001 - 2 000</div>
-<div><span style="background-color: #6af207"></span>501 - 1 000</div>
-<div><span style="background-color: #05b11b"></span>101 - 500</div>
-<div><span style="background-color: #096920"></span>1 - 100</div>
-</div>
- 
+
 
 </style>
 <script>
@@ -62,7 +93,7 @@ width: 50px;
     var map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/apluss-ukraine/ck56wjmc20s5s1cqgst9d0n81',
-        zoom: 12,
+        zoom: 10.5,
         center: [30.52, 50.45],
 		minZoom: 9.5
     });
@@ -89,26 +120,26 @@ width: 50px;
                     "match",
                     ["get", "atype"],
                     ["9"],
-                    "#096920",
+                    "#409069",
                     ["8"],
-                    "#05b11b",
+                    "#2E8269",
                     ["7"],
-                    "#6af207",
+                    "#227468",
                     ["6"],
-                    "#e6fe00",
+                    "#1C6664",
                     ["5"],
-                    "#f0b500",
+                    "#1D585D",
                     ["4"],
-                    "#f25800",
+                    "#1F4A55",
                     ["3"],
-                    "#df0000",
+                    "#213D4A",
                     ["2"],
-                    "#b11200",
+                    "#22303E",
                     ["1"],
-                    "#681100",
+                    "#202431",
                     "hsl(0, 0%, 100%)"
                 ],
-                "line-opacity": 0.8,
+                "line-opacity": 0.95,
                 "line-width": [
                     "interpolate",
                     ["linear"],
@@ -118,23 +149,23 @@ width: 50px;
                         "match",
                         ["get", "atype"],
                         ["9"],
-                        0.1,
+                        0.4,
                         ["8"],
-                        0.3,
-                        ["7"],
                         0.6,
+                        ["7"],
+                        0.8,
                         ["6"],
-                        0.9,
+                        1,
                         ["5"],
                         1.2,
                         ["4"],
-                        1.5,
+                        1.4,
                         ["3"],
-                        1.8,
+                        1.6,
                         ["2"],
-                        2.1,
+                        1.8,
                         ["1"],
-                        2.4,
+                        2,
                         0
                     ],
                     22,
@@ -142,28 +173,45 @@ width: 50px;
                         "match",
                         ["get", "atype"],
 						["9"],
-                        1,
+                        4,
                         ["8"],
-                        3,
-                        ["7"],
                         6,
+                        ["7"],
+                        8,
                         ["6"],
-                        9,
+                        10,
                         ["5"],
                         12,
                         ["4"],
-                        15,
+                        14,
                         ["3"],
-                        18,
+                        16,
                         ["2"],
-                        21,
+                        18,
                         ["1"],
-                        24,
+                        20,
                         1
                     ]
                 ]
             }
         });
+		map.on('click', 'prt-flow', function(e) {
+			new mapboxgl.Popup()
+			.setLngLat(e.lngLat)
+			.setHTML(e.features[0].properties.atype)
+			.addTo(map);
+			});
+ 
+			// Change the cursor to a pointer when the mouse is over the prt-flow layer.
+			map.on('mouseenter', 'prt-flow', function() {
+			map.getCanvas().style.cursor = 'pointer';
+			});
+ 
+			// Change it back to a pointer when it leaves.
+			map.on('mouseleave', 'prt-flow', function() {
+			map.getCanvas().style.cursor = '';
+			});
+ 
     });
 </script>
 
