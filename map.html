@@ -17,6 +17,7 @@
 #mapboxgl-popup {
 max-width: 400px;
 font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
 }
 </style>
 
@@ -37,15 +38,16 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 <div id="legend" class="legend">
 <h4>Інтенсивності руху індивідуального транспорту, одиниць/добу</h4>
-<div><span style="background-color: #202431"></span>більше 40 000</div>
-<div><span style="background-color: #22303E"></span>20 001 - 40 000</div>
-<div><span style="background-color: #213D4A"></span>10 001 - 20 000</div>
-<div><span style="background-color: #1F4A55"></span>5 001 - 10 000</div>
-<div><span style="background-color: #1D585D"></span>2 001 - 5 000</div>
-<div><span style="background-color: #1C6664"></span>1 001 - 2 000</div>
-<div><span style="background-color: #227468"></span>501 - 1 000</div>
-<div><span style="background-color: #2E8269"></span>101 - 500</div>
-<div><span style="background-color: #409069"></span>менше 100</div>
+<div><span style="background-color: #17232D"></span>більше 40 000</div>
+<div><span style="background-color: #1C313D"></span>30 001 - 40 000</div>
+<div><span style="background-color: #1E414C"></span>20 001 - 30 000</div>
+<div><span style="background-color: #20525B"></span>10 001 - 20 000</div>
+<div><span style="background-color: #206368"></span>5 001 - 10 000</div>
+<div><span style="background-color: #227574"></span>2 001 - 5 000</div>
+<div><span style="background-color: #28877D"></span>1 001 - 2 000</div>
+<div><span style="background-color: #329985"></span>501 - 1 000</div>
+<div><span style="background-color: #41AC8A"></span>101 - 500</div>
+<div><span style="background-color: #55BE8E"></span>менше 100</div>
 <h5>Джерело даних: Модель міської мобільності</h5>
 </div>
 
@@ -107,9 +109,9 @@ width: 50px;
             'type': 'line',
             'source': {
                 type: 'vector',
-                url: 'mapbox://apluss-ukraine.camflrck'
+                url: 'mapbox://apluss-ukraine.3kv8bji8'
             },
-            'source-layer': 'prt-flow4-d8enlu',
+            'source-layer': 'prt-flow-5-9kztuj',
 			'minzoom': 9,
             'layout': {
                 'line-join': 'round',
@@ -119,24 +121,26 @@ width: 50px;
                 "line-color": [
                     "match",
                     ["get", "atype"],
+					["10"],
+                    "#55BE8E",
                     ["9"],
-                    "#409069",
+                    "#41AC8A",
                     ["8"],
-                    "#2E8269",
+                    "#329985",
                     ["7"],
-                    "#227468",
+                    "#28877D",
                     ["6"],
-                    "#1C6664",
+                    "#227574",
                     ["5"],
-                    "#1D585D",
+                    "#206368",
                     ["4"],
-                    "#1F4A55",
+                    "#20525B",
                     ["3"],
-                    "#213D4A",
+                    "#1E414C",
                     ["2"],
-                    "#22303E",
+                    "#1C313D",
                     ["1"],
-                    "#202431",
+                    "#17232D",
                     "hsl(0, 0%, 100%)"
                 ],
                 "line-opacity": 0.95,
@@ -144,52 +148,56 @@ width: 50px;
                     "interpolate",
                     ["linear"],
                     ["zoom"],
-                    9,
+                    9.5,
                     [
                         "match",
                         ["get", "atype"],
-                        ["9"],
+						["10"],
                         0.4,
-                        ["8"],
+                        ["9"],
                         0.6,
-                        ["7"],
+                        ["8"],
                         0.8,
-                        ["6"],
+                        ["7"],
                         1,
-                        ["5"],
+                        ["6"],
                         1.2,
-                        ["4"],
+                        ["5"],
                         1.4,
-                        ["3"],
+                        ["4"],
                         1.6,
-                        ["2"],
+                        ["3"],
                         1.8,
-                        ["1"],
+                        ["2"],
                         2,
+                        ["1"],
+                        2.2,
                         0
                     ],
                     22,
                     [
                         "match",
                         ["get", "atype"],
-						["9"],
+						["10"],
                         4,
-                        ["8"],
+						["9"],
                         6,
-                        ["7"],
+                        ["8"],
                         8,
-                        ["6"],
+                        ["7"],
                         10,
-                        ["5"],
+                        ["6"],
                         12,
-                        ["4"],
+                        ["5"],
                         14,
-                        ["3"],
+                        ["4"],
                         16,
-                        ["2"],
+                        ["3"],
                         18,
-                        ["1"],
+                        ["2"],
                         20,
+                        ["1"],
+                        22,
                         1
                     ]
                 ]
@@ -198,7 +206,7 @@ width: 50px;
 		map.on('click', 'prt-flow', function(e) {
 			new mapboxgl.Popup()
 			.setLngLat(e.lngLat)
-			.setHTML(e.features[0].properties.atype)
+			.setHTML('<strong>Інтенсивність руху</strong>' + '<p></p>' + e.features[0].properties.atype_name)
 			.addTo(map);
 			});
  
