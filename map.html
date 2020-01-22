@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8" />
-<title>Модель моніторингу міської мобільності. А+С Україна</title>
+<title>Модель моніторингу міської мобільності. А+С Україна. Бета-версія</title>
 <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
@@ -78,7 +78,7 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 <div><span style="background-color: #227574"></span>2 001 - 5 000</div>
 <div><span style="background-color: #28877D"></span>1 001 - 2 000</div>
 <div><span style="background-color: #329985"></span>501 - 1 000</div>
-<div><span style="background-color: #41AC8A"></span>101 - 500</div>
+<div><span style="background-color: #41AC8A"></span>100 - 500</div>
 <div><span style="background-color: #55BE8E"></span>менше 100</div>
 <h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
 </div>
@@ -133,7 +133,7 @@ width: 50px;
 
     
 	var nav = new mapboxgl.NavigationControl();
-	map.addControl(nav, 'bottom-left');
+	map.addControl(nav, 'top-right');
 
 	
 	map.on('load', function() {
