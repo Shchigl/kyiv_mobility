@@ -8,10 +8,68 @@
 <link href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet" />
 <style>
 	body { margin: 0; padding: 0; }
-	#map { position: absolute; top: 0; bottom: 0; width: 100%; };
+	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
 </style>
 </head>
 <body>
+
+
+
+
+
+<div id='menu'>
+
+    <legend>test</legend>
+    <input id='prt-flow' type='radio' name='rtoggle' value='prt-flow' checked='checked'>
+    <label for='prt-flow'>prt-flow</label>
+    </p><input id='prt-floww' type='radio' name='rtoggle' value='prt-floww' >
+    <label for='prt-floww'>prt-floww</label></p>
+
+</div>
+
+
+<style>
+#menu {
+background: #fff;
+position: absolute;
+z-index: 1;
+top: 10px;
+right: 10px;
+border-radius: 3px;
+width: 120px;
+border: 1px solid rgba(0, 0, 0, 0.4);
+font-family: 'Open Sans', sans-serif;
+}
+ 
+
+</style>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+	.mapboxgl-ctrl-pitchtoggle-3d {background-image: url("file:///C:/Users/shchigl/Desktop/3d.svg");}
+	.mapboxgl-ctrl-pitchtoggle-2d {background-image: url("file:///C:/Users/shchigl/Desktop/2d.svg");}
+</style>
+
 
 <style>
 #mapboxgl-popup {
@@ -23,16 +81,18 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 <a href="https://apluss.pro/"><div id="logo">
 
-<img src="data:image/svg+xml;base64,PHN2ZyBpZD0iaW1nIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9%0D%0AIjAgMCA4NjAgMzIwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzQ4YzFiYjt9PC9zdHlsZT48%0D%0AL2RlZnM+PHRpdGxlPmErY19sb2dvX21haW48L3RpdGxlPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0i%0D%0ATTMwMi43NywzLjc3SDE5LjMxYTE0LjUsMTQuNSwwLDAsMC0xNC41LDE0LjVWMzAxLjczYTE0LjUs%0D%0AMTQuNSwwLDAsMCwxNC41LDE0LjVIMzAyLjc3YTE0LjUsMTQuNSwwLDAsMCwxNC41LTE0LjVWMTgu%0D%0AMjdBMTQuNSwxNC41LDAsMCwwLDMwMi43NywzLjc3Wk0zMy44MSw1Ni4xLDczLjY3LDk2VjE5MUwz%0D%0AMy44MSwxNTEuMTdaTTEzNy43MSwxNjBsLTMxLDMxVjEyOVpNNTcuMTQsMzIuNzdoMjA3LjhMMTYx%0D%0ALDEzNi42N1pNMTYxLDE4My4zM2w0Ny41Myw0Ny41NEwxNjEsMjc4LjRsLTQ3LjUzLTQ3LjUzWm03%0D%0AMC44Nyw3MC44NywzMywzM0gxOTguODdaTTE4NC4zNywxNjAsMjg4LjI3LDU2LjFWMjYzLjlaTTMz%0D%0ALjgxLDE5Ny44M2w4OS40LDg5LjRIMzMuODFaIi8+PHBhdGggZD0iTTUzNC4zMyw4OC41NHYxNDIu%0D%0ANmgtMjUuOUw1MDMuNjMsMjExYy0xMi4xNSwxNS4zNC0zMC4wNSwyMy42NS01MS40NywyMy42NS0z%0D%0AOS42NSwwLTY4LjEtMjkuNDEtNjguMS03NC44MSwwLTQ0LjEyLDI4LjQ1LTc0LjgxLDY4Ljc0LTc0%0D%0ALjgxLDE5LjgyLDAsMzcuNzIsOCw1MC4xOSwyNGw1Ljc2LTIwLjQ3Wm0tMzMuNTcsNzEuM2MwLTI3%0D%0ALjE4LTE2LjYzLTQ0LjEyLTQxLjI1LTQ0LjEyLTIzLjY2LDAtNDAuMjgsMTYuOTQtNDAuMjgsNDQu%0D%0AMTIsMCwyNy41LDE2LjYyLDQ0LjQ0LDQwLjI4LDQ0LjQ0QzQ4NC4xMywyMDQuMjgsNTAwLjc2LDE4%0D%0ANy4zNCw1MDAuNzYsMTU5Ljg0Wm0xMTUuMTUsMTMuODRINTczLjFWMTQ0LjkxaDQyLjgxVjEwMS40%0D%0ANkg2NDZ2NDMuNDVoNDIuODF2MjguNzdINjQ2djQzLjQ1SDYxNS45MVptMTA4LjItMTMuODRjMC00%0D%0ANi42OCwzNC4yMS03NS4xMyw3NS4xMy03NS4xMywyMC43OCwwLDM4LDYuMDcsNTMuMDgsMTkuMThs%0D%0ALTE3LDIzLjM0Yy0xMC4yMy04LjYzLTE5LjgyLTEyLjE1LTMzLjU3LTEyLjE1LTI0LDAtNDIuNTIs%0D%0AMTcuNTgtNDIuNTIsNDQuNzYsMCwyOC4xNCwxOC44Niw0NC43Niw0MS44OCw0NC43NiwxNS4zNSww%0D%0ALDI1LjktNC43OSwzNi40NS0xNC43MWwxNy41OCwyMy4zNGMtMTYsMTQuNzEtMzIuMjksMjIuMDYt%0D%0ANTcuNTUsMjIuMDZDNzYxLjUyLDIzNS4yOSw3MjQuMTEsMjA5LjcyLDcyNC4xMSwxNTkuODRaIi8+%0D%0APC9zdmc+" alt="А+С Україна" width="120.4" height="44.8">
+<img src="C:\Users\shchigl\Desktop\a+c_logo_main.svg" alt="А+С Україна" width="120.4" height="44.8">
 
 </div>
 </a>
 
 
-<button id="button" type="button" onclick="toggleLegend();">УМОВНІ ПОЗНАЧЕННЯ</button>
+
+
+<button id="buttonw" type="button" onclick="toggleLegendw();">УМОВНІ ПОЗНАЧЕННЯ</button>
 
 <style>
-#button {
+#buttonw {
 	cursor: pointer;
 	background-color: #48C1BB;
 	border-radius: 5px;
@@ -42,21 +102,53 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 	position: absolute;
 	opacity: 0.9;
 	right: 15px;
-	z-index: 1;
-	opacity: 0.9;
+	z-index: 100;
 }
 </style>
 
+
+<button id="buttonww" type="button" onclick="toggleLegendww();">УМОВНІ ПОЗНАЧЕННЯ</button>
+
+<style>
+#buttonww {
+	cursor: pointer;
+	background-color: #48C1BB;
+	border-radius: 5px;
+	bottom: 40px;
+	font: bold 15px/20px Helvetica;
+	padding: 3px 20px 3px;
+	position: absolute;
+	opacity: 0.9;
+	right: 15px;
+	z-index: 99;
+}
+</style>
+
+
 <script>
-	function toggleLegend() {
-		var x = document.getElementById("legend");
-		if (x.style.display === "none") {
-			x.style.display = "block";
+	function toggleLegendw() {
+		var w = document.getElementById("prt-flow-legend");
+		if (w.style.display === "none") {
+			w.style.display = "block";
 			} else {
-			x.style.display = "none";
+			w.style.display = "none";
 			}
 }
 </script>
+
+
+<script>
+	function toggleLegendww() {
+		var ww = document.getElementById("prt-floww-legend");
+		if (ww.style.display === "none") {
+			ww.style.display = "block";
+			} else {
+			ww.style.display = "none";
+			}
+}
+</script>
+
+
 
 
 <style>
@@ -68,7 +160,7 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 }
 </style>
 
-<div id="legend" class="legend" style="display: none">
+<div id="prt-flow-legend" class="legend" style="display: block">
 <h4>Інтенсивності руху<p>індивідуального транспорту,</p><p>одиниць/добу</p></h4>
 <div><span style="background-color: #17232D"></span>більше 40 000</div>
 <div><span style="background-color: #1C313D"></span>30 001 - 40 000</div>
@@ -83,8 +175,26 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 <h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
 </div>
 
+<div id="prt-floww-legend" class="legend" style="display: none">
+<h4>Інтенсивності руху<p>індивідуального транспорту,</p><p>одиниць/добу</p></h4>
+<div><span style="background-color: #562A29"></span>більше 40 000</div>
+<div><span style="background-color: #663332"></span>30 001 - 40 000</div>
+<div><span style="background-color: #763C3B"></span>20 001 - 30 000</div>
+<div><span style="background-color: #864545"></span>10 001 - 20 000</div>
+<div><span style="background-color: #964E4F"></span>5 001 - 10 000</div>
+<div><span style="background-color: #A7575A"></span>2 001 - 5 000</div>
+<div><span style="background-color: #B96165"></span>1 001 - 2 000</div>
+<div><span style="background-color: #CA6B71"></span>501 - 1 000</div>
+<div><span style="background-color: #DC757C"></span>100 - 500</div>
+<div><span style="background-color: #ED7F89"></span>менше 100</div>
+<h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
+</div>
+
+
+
+
 <style>
-#legend {
+#prt-flow-legend {
 background-color: #fff;
 border-radius: 5px;
 bottom: 80px;
@@ -97,17 +207,51 @@ right: 15px;
 z-index: 1;
 }
  
-#legend h4 {
+#prt-flow-legend h4 {
 margin: 0 0 10px;
 font: bold 18px/5px Helvetica;
 }
 
-#legend h5 {
+#prt-flow-legend h5 {
 margin: 10px 0 -10px;
 font: bold 12px/5px Helvetica;
 }
  
-#legend div span {
+#prt-flow-legend div span {
+border-radius: 0%;
+display: inline-block;
+height: 12px;
+margin-right: 10px;
+width: 50px;
+}
+</style>
+
+
+<style>
+#prt-floww-legend {
+background-color: #fff;
+border-radius: 5px;
+bottom: 80px;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+font: 15px/20px Helvetica;
+padding: 15px;
+position: absolute;
+opacity: 0.9;
+right: 15px;
+z-index: 1;
+}
+ 
+#prt-floww-legend h4 {
+margin: 0 0 10px;
+font: bold 18px/5px Helvetica;
+}
+
+#prt-floww-legend h5 {
+margin: 10px 0 -10px;
+font: bold 12px/5px Helvetica;
+}
+ 
+#prt-floww-legend div span {
 border-radius: 0%;
 display: inline-block;
 height: 12px;
@@ -121,6 +265,11 @@ width: 50px;
 
 
 </style>
+
+
+
+
+
 <script>
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYXBsdXNzLXVrcmFpbmUiLCJhIjoiY2s1NnUwNnhyMDZ2cjNmbWk0MHAwZTFtNyJ9.74AgY06hb35RJFM4Px-ACw';
     var map = new mapboxgl.Map({
@@ -131,10 +280,66 @@ width: 50px;
 		minZoom: 9.5
     });
 
-    
+	
+	
+	
+	class PitchToggle {
+		constructor({bearing = -10, pitch = 50, minpitchzoom = null}) {
+        this._bearing = bearing;
+        this._pitch = pitch;
+        this._minpitchzoom = minpitchzoom;
+    }
+
+    onAdd(map) {
+        this._map = map;
+        let _this = this; 
+
+        this._btn = document.createElement('button');
+        this._btn.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d';
+        this._btn.type = 'button';
+        this._btn['aria-label'] = 'Toggle Pitch';
+        this._btn.onclick = function() { 
+            if (map.getPitch() === 0) {
+                let options = {pitch: _this._pitch, bearing: _this._bearing};
+                if (_this._minpitchzoom && map.getZoom() > _this._minpitchzoom) {
+                    options.zoom = _this._minpitchzoom;
+                }
+                map.easeTo(options);
+                _this._btn.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-2d';
+            } else {
+                map.easeTo({pitch: 0, bearing: 0});
+                _this._btn.className = 'mapboxgl-ctrl-icon mapboxgl-ctrl-pitchtoggle-3d';
+            } 
+        };
+        
+
+        this._container = document.createElement('div');
+        this._container.className = 'mapboxgl-ctrl mapboxgl-ctrl-group';
+        this._container.appendChild(this._btn);
+
+        return this._container;
+    }
+
+    onRemove() {
+        this._container.parentNode.removeChild(this._container);
+        this._map = undefined;
+    }
+
+}
+	
+	
+	
+	
 	var nav = new mapboxgl.NavigationControl();
 	map.addControl(nav, 'top-right');
+	
+	map.addControl(new PitchToggle({ minpitchzoom: null }), "top-right");
+	
+	
 
+	
+	
+		
 	
 	map.on('load', function() {
         map.addLayer({
@@ -236,6 +441,171 @@ width: 50px;
                 ]
             }
         });
+
+
+        map.addLayer({
+            'id': 'prt-floww',
+            'type': 'line',
+            'source': {
+                type: 'vector',
+                url: 'mapbox://apluss-ukraine.3kv8bji8'
+            },
+            'source-layer': 'prt-flow-5-9kztuj',
+			'minzoom': 9,
+            'layout': {
+                'line-join': 'round',
+                'line-cap': 'round',
+				'visibility': 'none'
+            },
+            "paint": {
+                "line-color": [
+                    "match",
+                    ["get", "atype"],
+					["10"],
+                    "#ED7F89",
+                    ["9"],
+                    "#DC757C",
+                    ["8"],
+                    "#CA6B71",
+                    ["7"],
+                    "#B96165",
+                    ["6"],
+                    "#A7575A",
+                    ["5"],
+                    "#964E4F",
+                    ["4"],
+                    "#864545",
+                    ["3"],
+                    "#763C3B",
+                    ["2"],
+                    "#663332",
+                    ["1"],
+                    "#562A29",
+                    "hsl(0, 0%, 100%)"
+                ],
+                "line-opacity": 0.95,
+                "line-width": [
+                    "interpolate",
+                    ["linear"],
+                    ["zoom"],
+                    9.5,
+                    [
+                        "match",
+                        ["get", "atype"],
+						["10"],
+                        0.4,
+                        ["9"],
+                        0.6,
+                        ["8"],
+                        0.8,
+                        ["7"],
+                        1,
+                        ["6"],
+                        1.2,
+                        ["5"],
+                        1.4,
+                        ["4"],
+                        1.6,
+                        ["3"],
+                        1.8,
+                        ["2"],
+                        2,
+                        ["1"],
+                        2.2,
+                        0
+                    ],
+                    22,
+                    [
+                        "match",
+                        ["get", "atype"],
+						["10"],
+                        4,
+						["9"],
+                        6,
+                        ["8"],
+                        8,
+                        ["7"],
+                        10,
+                        ["6"],
+                        12,
+                        ["5"],
+                        14,
+                        ["4"],
+                        16,
+                        ["3"],
+                        18,
+                        ["2"],
+                        20,
+                        ["1"],
+                        22,
+                        1
+                    ]
+                ]
+            }
+        });
+
+
+
+
+var rtoggle = 'prt-flow'
+
+var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+var flowLegendEl = document.getElementById('prt-flow-legend');
+var flowwLegendEl = document.getElementById('prt-floww-legend');
+var flowButtonEl = document.getElementById('buttonw');
+var flowwButtonEl = document.getElementById('buttonww');
+
+
+
+function switchLayer(layer) {
+    var layerId = layer.target.id;
+    // set layer id to a menu value
+    // If id = Bed
+       if (layerId == 'prt-flow') {
+          map.setLayoutProperty('prt-flow', 'visibility', 'visible');
+          map.setLayoutProperty('prt-floww', 'visibility', 'none');
+		  flowLegendEl.style.display = 'block';
+          flowwLegendEl.style.display = 'none';
+		  flowButtonEl.style.display = 'block';
+		  flowwButtonEl.style.display = 'none';
+        }
+        // If id = Bath
+       if (layerId == 'prt-floww') {
+         map.setLayoutProperty('prt-flow', 'visibility', 'none');
+         map.setLayoutProperty('prt-floww', 'visibility', 'visible');
+		 flowLegendEl.style.display = 'none';
+         flowwLegendEl.style.display = 'block';
+		 flowButtonEl.style.display = 'none';
+		 flowwButtonEl.style.display = 'block';
+        }
+}
+
+
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onclick = switchLayer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		map.on('click', 'prt-flow', function(e) {
 			new mapboxgl.Popup()
 			.setLngLat(e.lngLat)
@@ -250,6 +620,24 @@ width: 50px;
  
 			// Change it back to a pointer when it leaves.
 			map.on('mouseleave', 'prt-flow', function() {
+			map.getCanvas().style.cursor = '';
+			});
+			
+			
+		map.on('click', 'prt-floww', function(e) {
+			new mapboxgl.Popup()
+			.setLngLat(e.lngLat)
+			.setHTML('<strong>Інтенсивність руху</strong>' + '<p></p>' + e.features[0].properties.atype_name)
+			.addTo(map);
+			});
+ 
+			// Change the cursor to a pointer when the mouse is over the prt-flow layer.
+			map.on('mouseenter', 'prt-floww', function() {
+			map.getCanvas().style.cursor = 'pointer';
+			});
+ 
+			// Change it back to a pointer when it leaves.
+			map.on('mouseleave', 'prt-floww', function() {
 			map.getCanvas().style.cursor = '';
 			});
  
