@@ -16,52 +16,38 @@
 
 
 
-
 <div id='menu'>
 
-    <legend>test</legend>
-    <input id='prt-flow' type='radio' name='rtoggle' value='prt-flow' checked='checked'>
-    <label for='prt-flow'>prt-flow</label>
-    </p><input id='prt-floww' type='radio' name='rtoggle' value='prt-floww' >
-    <label for='prt-floww'>prt-floww</label></p>
-
+    <h3><legend>Шари даних</legend></h3>
+    <div><input id='prt-flow' type='radio' name='rtoggle' value='prt-flow' checked='checked'>
+    <label for='prt-flow'>Інтенсивності руху індивідуального транспорту (ІТ)</label></div>
+    <div><input id='put-flow' type='radio' name='rtoggle' value='put-flow' >
+    <label for='put-flow'>Пасажиропотоки наземного громадського транспорту (ГТ)</label></div>
 </div>
 
 
 <style>
 #menu {
-background: #fff;
+background-color: #fff;
+box-sizing: border-box;
 position: absolute;
 z-index: 1;
-top: 10px;
-right: 10px;
-border-radius: 3px;
-width: 120px;
-border: 1px solid rgba(0, 0, 0, 0.4);
-font-family: 'Open Sans', sans-serif;
+padding: 5px 12px 5px;
+top: 15px;
+right: 15px;
+border-radius: 5px;
+max-width: 250px;
+font: 14px/18px Helvetica;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+opacity: 0.9;
 }
  
-
+#menu h3 {
+padding: 0px 0px 0px;
+font: bold 15px/0px Helvetica;
+}
 </style>
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -73,8 +59,8 @@ font-family: 'Open Sans', sans-serif;
 
 <style>
 #mapboxgl-popup {
-max-width: 400px;
-font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+max-width: 550px;
+font: 12px/12px Helvetica;
 
 }
 </style>
@@ -139,7 +125,7 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 
 <script>
 	function toggleLegendww() {
-		var ww = document.getElementById("prt-floww-legend");
+		var ww = document.getElementById("put-flow-legend");
 		if (ww.style.display === "none") {
 			ww.style.display = "block";
 			} else {
@@ -161,32 +147,38 @@ font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
 </style>
 
 <div id="prt-flow-legend" class="legend" style="display: block">
-<h4>Інтенсивності руху<p>індивідуального транспорту,</p><p>одиниць/добу</p></h4>
-<div><span style="background-color: #17232D"></span>більше 40 000</div>
-<div><span style="background-color: #1C313D"></span>30 001 - 40 000</div>
-<div><span style="background-color: #1E414C"></span>20 001 - 30 000</div>
-<div><span style="background-color: #20525B"></span>10 001 - 20 000</div>
-<div><span style="background-color: #206368"></span>5 001 - 10 000</div>
-<div><span style="background-color: #227574"></span>2 001 - 5 000</div>
-<div><span style="background-color: #28877D"></span>1 001 - 2 000</div>
-<div><span style="background-color: #329985"></span>501 - 1 000</div>
-<div><span style="background-color: #41AC8A"></span>100 - 500</div>
-<div><span style="background-color: #55BE8E"></span>менше 100</div>
+<h4>Інтенсивності руху ІТ,<p>одиниць/добу</p></h4>
+<div><span style="background-color: #172D33"></span>більше 60 000</div>
+<div><span style="background-color: #1D383F"></span>50 001 - 60 000</div>
+<div><span style="background-color: #22444B"></span>40 001 - 50 000</div>
+<div><span style="background-color: #275057"></span>30 001 - 40 000</div>
+<div><span style="background-color: #2C5C63"></span>20 001 - 30 000</div>
+<div><span style="background-color: #31696E"></span>10 001 - 20 000</div>
+<div><span style="background-color: #36767A"></span>5 001 - 10 000</div>
+<div><span style="background-color: #3B8486"></span>2 001 - 5 000</div>
+<div><span style="background-color: #409291"></span>1 001 - 2 000</div>
+<div><span style="background-color: #46A09C"></span>501 - 1 000</div>
+<div><span style="background-color: #4CAEA6"></span>100 - 500</div>
+<div><span style="background-color: #52BCB1"></span>менше 100</div>
 <h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
 </div>
 
-<div id="prt-floww-legend" class="legend" style="display: none">
-<h4>Інтенсивності руху<p>індивідуального транспорту,</p><p>одиниць/добу</p></h4>
-<div><span style="background-color: #562A29"></span>більше 40 000</div>
-<div><span style="background-color: #663332"></span>30 001 - 40 000</div>
-<div><span style="background-color: #763C3B"></span>20 001 - 30 000</div>
-<div><span style="background-color: #864545"></span>10 001 - 20 000</div>
-<div><span style="background-color: #964E4F"></span>5 001 - 10 000</div>
-<div><span style="background-color: #A7575A"></span>2 001 - 5 000</div>
-<div><span style="background-color: #B96165"></span>1 001 - 2 000</div>
-<div><span style="background-color: #CA6B71"></span>501 - 1 000</div>
-<div><span style="background-color: #DC757C"></span>100 - 500</div>
-<div><span style="background-color: #ED7F89"></span>менше 100</div>
+<div id="put-flow-legend" class="legend" style="display: none">
+<h4>Пасажиропотоки<p>наземного ГТ, осіб/добу</p></h4>
+<div><span style="background-color: #582116"></span>більше 80 000</div>
+<div><span style="background-color: #622619"></span>70 001 - 80 000</div>
+<div><span style="background-color: #6D2B1D"></span>60 001 - 70 000</div>
+<div><span style="background-color: #783021"></span>50 001 - 60 000</div>
+<div><span style="background-color: #833524"></span>40 001 - 50 000</div>
+<div><span style="background-color: #8E3A28"></span>30 001 - 40 000</div>
+<div><span style="background-color: #99402C"></span>20 001 - 30 000</div>
+<div><span style="background-color: #A54530"></span>10 001 - 20 000</div>
+<div><span style="background-color: #B14B34"></span>5 001 - 10 000</div>
+<div><span style="background-color: #BD5038"></span>2 001 - 5 000</div>
+<div><span style="background-color: #C9563C"></span>1 001 - 2 000</div>
+<div><span style="background-color: #D55B40"></span>501 - 1 000</div>
+<div><span style="background-color: #E16144"></span>100 - 500</div>
+<div><span style="background-color: #ED6748"></span>менше 100</div>
 <h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
 </div>
 
@@ -199,8 +191,8 @@ background-color: #fff;
 border-radius: 5px;
 bottom: 80px;
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-font: 15px/20px Helvetica;
-padding: 15px;
+font: 14px/17px Helvetica;
+padding: 12px;
 position: absolute;
 opacity: 0.9;
 right: 15px;
@@ -209,18 +201,18 @@ z-index: 1;
  
 #prt-flow-legend h4 {
 margin: 0 0 10px;
-font: bold 18px/5px Helvetica;
+font: bold 15px/4px Helvetica;
 }
 
 #prt-flow-legend h5 {
 margin: 10px 0 -10px;
-font: bold 12px/5px Helvetica;
+font: bold 11px/5px Helvetica;
 }
  
 #prt-flow-legend div span {
 border-radius: 0%;
 display: inline-block;
-height: 12px;
+height: 8px;
 margin-right: 10px;
 width: 50px;
 }
@@ -228,33 +220,33 @@ width: 50px;
 
 
 <style>
-#prt-floww-legend {
+#put-flow-legend {
 background-color: #fff;
 border-radius: 5px;
 bottom: 80px;
 box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-font: 15px/20px Helvetica;
-padding: 15px;
+font: 14px/17px Helvetica;
+padding: 12px;
 position: absolute;
 opacity: 0.9;
 right: 15px;
 z-index: 1;
 }
  
-#prt-floww-legend h4 {
+#put-flow-legend h4 {
 margin: 0 0 10px;
-font: bold 18px/5px Helvetica;
+font: bold 15px/4px Helvetica;
 }
 
-#prt-floww-legend h5 {
+#put-flow-legend h5 {
 margin: 10px 0 -10px;
-font: bold 12px/5px Helvetica;
+font: bold 11px/5px Helvetica;
 }
  
-#prt-floww-legend div span {
+#put-flow-legend div span {
 border-radius: 0%;
 display: inline-block;
-height: 12px;
+height: 8px;
 margin-right: 10px;
 width: 50px;
 }
@@ -331,15 +323,13 @@ width: 50px;
 	
 	
 	var nav = new mapboxgl.NavigationControl();
-	map.addControl(nav, 'top-right');
+	map.addControl(nav, 'bottom-left');
 	
-	map.addControl(new PitchToggle({ minpitchzoom: null }), "top-right");
+	map.addControl(new PitchToggle({ minpitchzoom: null }), "bottom-left");
 	
 	
 
 	
-	
-		
 	
 	map.on('load', function() {
         map.addLayer({
@@ -347,9 +337,9 @@ width: 50px;
             'type': 'line',
             'source': {
                 type: 'vector',
-                url: 'mapbox://apluss-ukraine.3kv8bji8'
+                url: 'mapbox://apluss-ukraine.6ujsfyv5'
             },
-            'source-layer': 'prt-flow-5-9kztuj',
+            'source-layer': 'prt-flow-dkuutu',
 			'minzoom': 9,
             'layout': {
                 'line-join': 'round',
@@ -358,27 +348,31 @@ width: 50px;
             "paint": {
                 "line-color": [
                     "match",
-                    ["get", "atype"],
-					["10"],
-                    "#55BE8E",
-                    ["9"],
-                    "#41AC8A",
-                    ["8"],
-                    "#329985",
-                    ["7"],
-                    "#28877D",
-                    ["6"],
-                    "#227574",
-                    ["5"],
-                    "#206368",
-                    ["4"],
-                    "#20525B",
-                    ["3"],
-                    "#1E414C",
+                    ["get", "type"],
+					["1"],
+                    "#52BCB1",
                     ["2"],
-                    "#1C313D",
-                    ["1"],
-                    "#17232D",
+                    "#4CAEA6",
+                    ["3"],
+                    "#46A09C",
+                    ["4"],
+                    "#409291",
+                    ["5"],
+                    "#3B8486",
+                    ["6"],
+                    "#36767A",
+                    ["7"],
+                    "#31696E",
+                    ["8"],
+                    "#2C5C63",
+                    ["9"],
+                    "#275057",
+                    ["10"],
+                    "#22444B",
+					["11"],
+                    "#1D383F",
+                    ["12"],
+                    "#172D33",
                     "hsl(0, 0%, 100%)"
                 ],
                 "line-opacity": 0.95,
@@ -389,53 +383,61 @@ width: 50px;
                     9.5,
                     [
                         "match",
-                        ["get", "atype"],
-						["10"],
+                        ["get", "type"],
+						["1"],
                         0.4,
-                        ["9"],
-                        0.6,
-                        ["8"],
-                        0.8,
-                        ["7"],
-                        1,
-                        ["6"],
-                        1.2,
-                        ["5"],
-                        1.4,
-                        ["4"],
-                        1.6,
-                        ["3"],
-                        1.8,
                         ["2"],
+                        0.6,
+                        ["3"],
+                        0.8,
+                        ["4"],
+                        1,
+                        ["5"],
+                        1.2,
+                        ["6"],
+                        1.4,
+                        ["7"],
+                        1.6,
+                        ["8"],
+                        1.8,
+                        ["9"],
                         2,
-                        ["1"],
+                        ["10"],
                         2.2,
+						["11"],
+                        2.4,
+                        ["12"],
+                        2.6,
                         0
                     ],
                     22,
                     [
                         "match",
-                        ["get", "atype"],
-						["10"],
+                        ["get", "type"],
+						["1"],
                         4,
-						["9"],
+						["2"],
                         6,
-                        ["8"],
-                        8,
-                        ["7"],
-                        10,
-                        ["6"],
-                        12,
-                        ["5"],
-                        14,
-                        ["4"],
-                        16,
                         ["3"],
+                        8,
+                        ["4"],
+                        10,
+                        ["5"],
+                        12,
+                        ["6"],
+                        14,
+                        ["7"],
+                        16,
+                        ["8"],
                         18,
-                        ["2"],
+                        ["9"],
                         20,
-                        ["1"],
+                        ["10"],
                         22,
+						["11"],
+                        24,
+                        ["12"],
+                        26,
                         1
                     ]
                 ]
@@ -444,13 +446,13 @@ width: 50px;
 
 
         map.addLayer({
-            'id': 'prt-floww',
+            'id': 'put-flow',
             'type': 'line',
             'source': {
                 type: 'vector',
-                url: 'mapbox://apluss-ukraine.3kv8bji8'
+                url: 'mapbox://apluss-ukraine.8nozmu8p'
             },
-            'source-layer': 'prt-flow-5-9kztuj',
+            'source-layer': 'put-flow-2fphfe',
 			'minzoom': 9,
             'layout': {
                 'line-join': 'round',
@@ -460,27 +462,35 @@ width: 50px;
             "paint": {
                 "line-color": [
                     "match",
-                    ["get", "atype"],
-					["10"],
-                    "#ED7F89",
-                    ["9"],
-                    "#DC757C",
-                    ["8"],
-                    "#CA6B71",
-                    ["7"],
-                    "#B96165",
-                    ["6"],
-                    "#A7575A",
-                    ["5"],
-                    "#964E4F",
-                    ["4"],
-                    "#864545",
-                    ["3"],
-                    "#763C3B",
+                    ["get", "type"],
+					["1"],
+                    "#ED6748",
                     ["2"],
-                    "#663332",
-                    ["1"],
-                    "#562A29",
+                    "#E16144",
+                    ["3"],
+                    "#D55B40",
+                    ["4"],
+                    "#C9563C",
+                    ["5"],
+                    "#BD5038",
+                    ["6"],
+                    "#B14B34",
+                    ["7"],
+                    "#A54530",
+                    ["8"],
+                    "#99402C",
+                    ["9"],
+                    "#8E3A28",
+                    ["10"],
+                    "#833524",
+					["11"],
+                    "#783021",
+                    ["12"],
+                    "#6D2B1D",
+                    ["13"],
+                    "#622619",
+                    ["14"],
+                    "#582116",
                     "hsl(0, 0%, 100%)"
                 ],
                 "line-opacity": 0.95,
@@ -491,53 +501,69 @@ width: 50px;
                     9.5,
                     [
                         "match",
-                        ["get", "atype"],
-						["10"],
+                        ["get", "type"],
+						["1"],
                         0.4,
-                        ["9"],
-                        0.6,
-                        ["8"],
-                        0.8,
-                        ["7"],
-                        1,
-                        ["6"],
-                        1.2,
-                        ["5"],
-                        1.4,
-                        ["4"],
-                        1.6,
-                        ["3"],
-                        1.8,
                         ["2"],
+                        0.6,
+                        ["3"],
+                        0.8,
+                        ["4"],
+                        1,
+                        ["5"],
+                        1.2,
+                        ["6"],
+                        1.4,
+                        ["7"],
+                        1.6,
+                        ["8"],
+                        1.8,
+                        ["9"],
                         2,
-                        ["1"],
+                        ["10"],
                         2.2,
+						["11"],
+                        2.4,
+                        ["12"],
+                        2.6,
+                        ["13"],
+                        2.8,
+                        ["14"],
+                        3,
                         0
                     ],
                     22,
                     [
                         "match",
-                        ["get", "atype"],
-						["10"],
+                        ["get", "type"],
+						["1"],
                         4,
-						["9"],
+						["2"],
                         6,
-                        ["8"],
-                        8,
-                        ["7"],
-                        10,
-                        ["6"],
-                        12,
-                        ["5"],
-                        14,
-                        ["4"],
-                        16,
                         ["3"],
+                        8,
+                        ["4"],
+                        10,
+                        ["5"],
+                        12,
+                        ["6"],
+                        14,
+                        ["7"],
+                        16,
+                        ["8"],
                         18,
-                        ["2"],
+                        ["9"],
                         20,
-                        ["1"],
+                        ["10"],
                         22,
+						["11"],
+                        24,
+                        ["12"],
+                        26,
+                        ["13"],
+                        28,
+                        ["14"],
+                        30,
                         1
                     ]
                 ]
@@ -552,7 +578,7 @@ var rtoggle = 'prt-flow'
 var layerList = document.getElementById('menu');
 var inputs = layerList.getElementsByTagName('input');
 var flowLegendEl = document.getElementById('prt-flow-legend');
-var flowwLegendEl = document.getElementById('prt-floww-legend');
+var flowwLegendEl = document.getElementById('put-flow-legend');
 var flowButtonEl = document.getElementById('buttonw');
 var flowwButtonEl = document.getElementById('buttonww');
 
@@ -564,16 +590,16 @@ function switchLayer(layer) {
     // If id = Bed
        if (layerId == 'prt-flow') {
           map.setLayoutProperty('prt-flow', 'visibility', 'visible');
-          map.setLayoutProperty('prt-floww', 'visibility', 'none');
+          map.setLayoutProperty('put-flow', 'visibility', 'none');
 		  flowLegendEl.style.display = 'block';
           flowwLegendEl.style.display = 'none';
 		  flowButtonEl.style.display = 'block';
 		  flowwButtonEl.style.display = 'none';
         }
         // If id = Bath
-       if (layerId == 'prt-floww') {
+       if (layerId == 'put-flow') {
          map.setLayoutProperty('prt-flow', 'visibility', 'none');
-         map.setLayoutProperty('prt-floww', 'visibility', 'visible');
+         map.setLayoutProperty('put-flow', 'visibility', 'visible');
 		 flowLegendEl.style.display = 'none';
          flowwLegendEl.style.display = 'block';
 		 flowButtonEl.style.display = 'none';
@@ -591,25 +617,10 @@ for (var i = 0; i < inputs.length; i++) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		map.on('click', 'prt-flow', function(e) {
 			new mapboxgl.Popup()
 			.setLngLat(e.lngLat)
-			.setHTML('<strong>Інтенсивність руху</strong>' + '<p></p>' + e.features[0].properties.atype_name)
+			.setHTML('<strong>Інтенсивність руху</strong>' + '<p></p>' + e.features[0].properties.type_name)
 			.addTo(map);
 			});
  
@@ -624,20 +635,28 @@ for (var i = 0; i < inputs.length; i++) {
 			});
 			
 			
-		map.on('click', 'prt-floww', function(e) {
+		map.on('click', 'put-flow', function(e) {
 			new mapboxgl.Popup()
 			.setLngLat(e.lngLat)
-			.setHTML('<strong>Інтенсивність руху</strong>' + '<p></p>' + e.features[0].properties.atype_name)
+			.setHTML(
+			'<strong>Пасажиропотоки, осіб/добу</strong>' + '<p></p>' + e.features[0].properties.Total + ' — загалом'
+			+ '<p></p>' + e.features[0].properties.ExpressTram + ' — швидкісні трамваї'
+			+ '<p></p>' + e.features[0].properties.Tram + ' — трамваї'
+			+ '<p></p>' + e.features[0].properties.Trolleybus + ' — тролейбуси'
+			+ '<p></p>' + e.features[0].properties.Bus + ' — автобуси'
+			+ '<p></p>' + e.features[0].properties.Marshrutka + ' — маршрутки'
+			+ '<p></p>' + e.features[0].properties.ShuttleBus + ' — приміські автобуси'
+			)
 			.addTo(map);
 			});
  
 			// Change the cursor to a pointer when the mouse is over the prt-flow layer.
-			map.on('mouseenter', 'prt-floww', function() {
+			map.on('mouseenter', 'put-flow', function() {
 			map.getCanvas().style.cursor = 'pointer';
 			});
  
 			// Change it back to a pointer when it leaves.
-			map.on('mouseleave', 'prt-floww', function() {
+			map.on('mouseleave', 'put-flow', function() {
 			map.getCanvas().style.cursor = '';
 			});
  
