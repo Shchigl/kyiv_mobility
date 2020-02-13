@@ -21,8 +21,8 @@
     <h3><legend>Шари даних</legend></h3>
     <div><input id='prt-flow' type='radio' name='rtoggle' value='prt-flow' checked='checked'>
     <label for='prt-flow'>Інтенсивності руху індивідуального транспорту (ІТ)</label></div>
-    <div><input id='put-flow' type='radio' name='rtoggle' value='put-flow' >
-    <label for='put-flow'>Пасажиропотоки наземного громадського транспорту (ГТ)</label></div>
+    <div><input id='metro-flow' type='radio' name='rtoggle' value='metro-flow' >
+    <label for='metro-flow'>Пасажиропотоки метро</label></div>
 </div>
 
 
@@ -126,7 +126,7 @@ font: 12px/12px Helvetica;
 
 <script>
 	function toggleLegendww() {
-		var ww = document.getElementById("put-flow-legend");
+		var ww = document.getElementById("metro-flow-legend");
 		if (ww.style.display === "none") {
 			ww.style.display = "block";
 			} else {
@@ -164,22 +164,22 @@ font: 12px/12px Helvetica;
 <h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
 </div>
 
-<div id="put-flow-legend" class="legend" style="display: none">
-<h4>Пасажиропотоки<p>наземного ГТ, осіб/добу</p></h4>
-<div><span style="background-color: #582116"></span>більше 80 000</div>
-<div><span style="background-color: #622619"></span>70 001 - 80 000</div>
-<div><span style="background-color: #6D2B1D"></span>60 001 - 70 000</div>
-<div><span style="background-color: #783021"></span>50 001 - 60 000</div>
-<div><span style="background-color: #833524"></span>40 001 - 50 000</div>
-<div><span style="background-color: #8E3A28"></span>30 001 - 40 000</div>
-<div><span style="background-color: #99402C"></span>20 001 - 30 000</div>
-<div><span style="background-color: #A54530"></span>10 001 - 20 000</div>
-<div><span style="background-color: #B14B34"></span>5 001 - 10 000</div>
-<div><span style="background-color: #BD5038"></span>2 001 - 5 000</div>
-<div><span style="background-color: #C9563C"></span>1 001 - 2 000</div>
-<div><span style="background-color: #D55B40"></span>501 - 1 000</div>
-<div><span style="background-color: #E16144"></span>100 - 500</div>
-<div><span style="background-color: #ED6748"></span>менше 100</div>
+<div id="metro-flow-legend" class="legend" style="display: none">
+<h4>Пасажиропотоки метро,<p>осіб/добу</p></h4>
+<div><span style="background-color: #582116"></span>більше 350 000</div>
+<div><span style="background-color: #622619"></span>325 001 - 350 000</div>
+<div><span style="background-color: #6D2B1D"></span>300 001 - 325 000</div>
+<div><span style="background-color: #783021"></span>275 001 - 300 000</div>
+<div><span style="background-color: #833524"></span>250 001 - 275 000</div>
+<div><span style="background-color: #8E3A28"></span>225 001 - 250 000</div>
+<div><span style="background-color: #99402C"></span>200 001 - 225 000</div>
+<div><span style="background-color: #A54530"></span>175 001 - 200 000</div>
+<div><span style="background-color: #B14B34"></span>150 001 - 175 000</div>
+<div><span style="background-color: #BD5038"></span>125 001 - 150 000</div>
+<div><span style="background-color: #C9563C"></span>100 001 - 125 000</div>
+<div><span style="background-color: #D55B40"></span>75 001 - 100 000</div>
+<div><span style="background-color: #E16144"></span>50 000 - 75 000</div>
+<div><span style="background-color: #ED6748"></span>менше 50 000</div>
 <h5>Джерело даних:<p>Модель міської мобільності, 2017 рік</p></h5>
 </div>
 
@@ -221,7 +221,7 @@ width: 50px;
 
 
 <style>
-#put-flow-legend {
+#metro-flow-legend {
 background-color: #fff;
 border-radius: 5px;
 bottom: 80px;
@@ -234,17 +234,17 @@ right: 15px;
 z-index: 1;
 }
  
-#put-flow-legend h4 {
+#metro-flow-legend h4 {
 margin: 0 0 -4px;
 font: bold 15px/4px Helvetica;
 }
 
-#put-flow-legend h5 {
+#metro-flow-legend h5 {
 margin: 8px 0 -12px;
 font: bold 11px/5px Helvetica;
 }
  
-#put-flow-legend div span {
+#metro-flow-legend div span {
 border-radius: 0%;
 display: inline-block;
 height: 8px;
@@ -267,7 +267,7 @@ width: 50px;
 	mapboxgl.accessToken = 'pk.eyJ1IjoiYXBsdXNzLXVrcmFpbmUiLCJhIjoiY2s1NnUwNnhyMDZ2cjNmbWk0MHAwZTFtNyJ9.74AgY06hb35RJFM4Px-ACw';
     var map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/apluss-ukraine/ck56wjmc20s5s1cqgst9d0n81',
+        style: 'mapbox://styles/apluss-ukraine/ck6jaqhmp14zn1ip2g1pgkl5q',
         zoom: 10.5,
         center: [30.52, 50.45],
 		minZoom: 9.5
@@ -447,13 +447,13 @@ width: 50px;
 
 
         map.addLayer({
-            'id': 'put-flow',
+            'id': 'metro-flow',
             'type': 'line',
             'source': {
                 type: 'vector',
-                url: 'mapbox://apluss-ukraine.8nozmu8p'
+                url: 'mapbox://apluss-ukraine.4e67o5qe'
             },
-            'source-layer': 'put-flow-2fphfe',
+            'source-layer': 'metro-flow-3vmfwh',
 			'minzoom': 9,
             'layout': {
                 'line-join': 'round',
@@ -504,33 +504,33 @@ width: 50px;
                         "match",
                         ["get", "type"],
 						["1"],
-                        0.4,
-                        ["2"],
-                        0.6,
-                        ["3"],
-                        0.8,
-                        ["4"],
                         1,
-                        ["5"],
-                        1.2,
-                        ["6"],
-                        1.4,
-                        ["7"],
+                        ["2"],
+                        1.3,
+                        ["3"],
                         1.6,
-                        ["8"],
-                        1.8,
-                        ["9"],
-                        2,
-                        ["10"],
+                        ["4"],
+                        1.9,
+                        ["5"],
                         2.2,
-						["11"],
-                        2.4,
-                        ["12"],
-                        2.6,
-                        ["13"],
+                        ["6"],
+                        2.5,
+                        ["7"],
                         2.8,
+                        ["8"],
+                        3.1,
+                        ["9"],
+                        3.4,
+                        ["10"],
+                        3.7,
+						["11"],
+                        4,
+                        ["12"],
+                        4.3,
+                        ["13"],
+                        4.6,
                         ["14"],
-                        3,
+                        4.9,
                         0
                     ],
                     22,
@@ -538,33 +538,33 @@ width: 50px;
                         "match",
                         ["get", "type"],
 						["1"],
-                        4,
+                        4.5,
 						["2"],
-                        6,
+                        6.5,
                         ["3"],
-                        8,
+                        8.5,
                         ["4"],
-                        10,
+                        10.5,
                         ["5"],
-                        12,
+                        12.5,
                         ["6"],
-                        14,
+                        14.5,
                         ["7"],
-                        16,
+                        16.5,
                         ["8"],
-                        18,
+                        18.5,
                         ["9"],
-                        20,
+                        20.5,
                         ["10"],
-                        22,
+                        22.5,
 						["11"],
-                        24,
+                        24.5,
                         ["12"],
-                        26,
+                        26.5,
                         ["13"],
-                        28,
+                        28.5,
                         ["14"],
-                        30,
+                        30.5,
                         1
                     ]
                 ]
@@ -579,7 +579,7 @@ var rtoggle = 'prt-flow'
 var layerList = document.getElementById('menu');
 var inputs = layerList.getElementsByTagName('input');
 var flowLegendEl = document.getElementById('prt-flow-legend');
-var flowwLegendEl = document.getElementById('put-flow-legend');
+var flowwLegendEl = document.getElementById('metro-flow-legend');
 var flowButtonEl = document.getElementById('buttonw');
 var flowwButtonEl = document.getElementById('buttonww');
 
@@ -591,16 +591,16 @@ function switchLayer(layer) {
     // If id = Bed
        if (layerId == 'prt-flow') {
           map.setLayoutProperty('prt-flow', 'visibility', 'visible');
-          map.setLayoutProperty('put-flow', 'visibility', 'none');
+          map.setLayoutProperty('metro-flow', 'visibility', 'none');
 		  flowLegendEl.style.display = 'block';
           flowwLegendEl.style.display = 'none';
 		  flowButtonEl.style.display = 'block';
 		  flowwButtonEl.style.display = 'none';
         }
         // If id = Bath
-       if (layerId == 'put-flow') {
+       if (layerId == 'metro-flow') {
          map.setLayoutProperty('prt-flow', 'visibility', 'none');
-         map.setLayoutProperty('put-flow', 'visibility', 'visible');
+         map.setLayoutProperty('metro-flow', 'visibility', 'visible');
 		 flowLegendEl.style.display = 'none';
          flowwLegendEl.style.display = 'block';
 		 flowButtonEl.style.display = 'none';
@@ -636,28 +636,22 @@ for (var i = 0; i < inputs.length; i++) {
 			});
 			
 			
-		map.on('click', 'put-flow', function(e) {
+		map.on('click', 'metro-flow', function(e) {
 			new mapboxgl.Popup()
 			.setLngLat(e.lngLat)
 			.setHTML(
-			'<strong>Пасажиропотоки, осіб/добу</strong>' + '<p></p>' + e.features[0].properties.Total + ' — загалом'
-			+ '<p></p>' + e.features[0].properties.ExpressTram + ' — швидкісні трамваї'
-			+ '<p></p>' + e.features[0].properties.Tram + ' — трамваї'
-			+ '<p></p>' + e.features[0].properties.Trolleybus + ' — тролейбуси'
-			+ '<p></p>' + e.features[0].properties.Bus + ' — автобуси'
-			+ '<p></p>' + e.features[0].properties.Marshrutka + ' — маршрутки'
-			+ '<p></p>' + e.features[0].properties.ShuttleBus + ' — приміські автобуси'
+			'<strong>Пасажиропотоки</strong>' + '<p></p>' + e.features[0].properties.flow + ' осіб/добу'
 			)
 			.addTo(map);
 			});
  
 			// Change the cursor to a pointer when the mouse is over the prt-flow layer.
-			map.on('mouseenter', 'put-flow', function() {
+			map.on('mouseenter', 'metro-flow', function() {
 			map.getCanvas().style.cursor = 'pointer';
 			});
  
 			// Change it back to a pointer when it leaves.
-			map.on('mouseleave', 'put-flow', function() {
+			map.on('mouseleave', 'metro-flow', function() {
 			map.getCanvas().style.cursor = '';
 			});
  
